@@ -1,14 +1,11 @@
 package com.example.blocnotas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -25,8 +22,8 @@ public class CrearNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_nota);
 
-        editNombre=(EditText)findViewById(R.id.etNombre);
-        editNota=(EditText)findViewById(R.id.etNota);
+        editNombre= findViewById(R.id.etNombre);
+        editNota= findViewById(R.id.etNota);
         bd=new MiBaseDeDatos(this);
         lista=bd.getNotas();
     }
