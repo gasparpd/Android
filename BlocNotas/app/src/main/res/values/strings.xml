@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bloc Notas</string>
+    <string name="crearNota">Añadir una nota</string>
+    <string name="buscarNota">Buscar una Nota</string>
+    <string name="borrarNota">Borrar una Nota</string>
+    <string name="ayudaContenidoNota">Contenido de la nota</string>
+    <string name="ayudaNombreNota">Nombre o título de la Nota</string>
+    <string name="guardarNota">Guardar Nota</string>
+    <string name="seleccionarNota">Selecciona una Nota:</string>
+    <string name="borrar">Borrar Nota</string>
+</resources>
