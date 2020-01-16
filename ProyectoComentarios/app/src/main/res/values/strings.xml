@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bloc de notas</string>
+    <string name="texto_contanido_comentario">Contenido del comentario</string>
+    <string name="contenido_comentario">Contenido del comentario</string>
+    <string name="nombre_comentario">Asunto del comentario</string>
+    <string name="txt_asunto_nota">Asunto de la nota</string>
+    <string name="txt_nota_detalles">Detalles</string>
+    <string name="tv_nueva_nota">NUEVA NOTA</string>
+</resources>
