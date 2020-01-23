@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,5 +29,26 @@ public class MainActivity extends AppCompatActivity {
     public void borrarNota (View view){
         Intent intent=new Intent(this,BorrarNota.class);
         startActivity(intent);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch (id){
+            case R.id.menu_item_crear:
+                crearNota(this.getCurrentFocus());
+                break;
+            case R.id.menu_item_buscar:
+                buscarNota(this.getCurrentFocus());
+                break;
+            case R.id.menu_item_eliminar:
+                borrarNota(this.getCurrentFocus());
+                break;
+        }
+        return true;
     }
 }

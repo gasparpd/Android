@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">appAsteroides</string>
+    <string name="tv_titulo">ASTEROIDES</string>
+    <string name="btn_jugar">JUGAR</string>
+    <string name="btn_salir">SALIR</string>
+    <string name="btn_acercade">ACERCA DE</string>
+    <string name="btn_configurar">CONFIGURAR</string>
+    <string name="btn_puntos">PUNTUACIÓN</string>
+</resources>
