@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
+import android.app.AlertDialog;
+
 public class BuscarNota extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText editNombre;
@@ -36,6 +38,24 @@ public class BuscarNota extends AppCompatActivity implements AdapterView.OnItemS
         spinNotas.setOnItemSelectedListener(this);
         editNombre.setEnabled(false);
         editNota.setEnabled(false);
+
+        //Mostrando una alerta al iniciar la activity
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setTitle("Buscar una nota");
+        alerta.setMessage("Vamos a buscar una nota");
+        alerta.setPositiveButton("OK", null);
+        alerta.create();
+        alerta.show();
+
+        //Alerta con dos opciones
+        AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+        alert1.setTitle("CONFIRMACIÓN");
+        alert1.setMessage("¿Quieres borrar la NOTA?");
+        alert1.setCancelable(false);
+        alert1.setPositiveButton("SI",null);
+        alert1.setNegativeButton("NO",null);
+        alert1.create();
+        alert1.show();
     }
 
     public void verNota (View view){
