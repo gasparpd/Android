@@ -1,10 +1,12 @@
 package com.example.applistview;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,22 +15,22 @@ public class MiAdaptador extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<String> nombres;
+    private ArrayList<ComunidadesAutonomas> comunidades;
 
-    public MiAdaptador(Context context, int layout, ArrayList<String> nombres) {
+    public MiAdaptador(Context context, int layout, ArrayList<ComunidadesAutonomas> com) {
         this.context = context;
         this.layout = layout;
-        this.nombres = nombres;
+        this.comunidades = com;
     }
 
     @Override
     public int getCount() {
-        return this.nombres.size();
+        return this.comunidades.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return this.nombres.get(position);
+        return this.comunidades.get(position);
     }
 
     @Override
@@ -46,12 +48,14 @@ public class MiAdaptador extends BaseAdapter {
 
         v = layoutInflater.inflate(R.layout.list_items, null);
         // Valor actual según la posición
-
-        String currentName = nombres.get(position);
+        //String currentName = comunidades.get(position);
+        ComunidadesAutonomas com = comunidades.get(position);
 
         // Referenciamos el elemento a modificar y lo rellenamos
         TextView tv = v.findViewById(R.id.textView);
-        tv.setText(currentName);
+        tv.setText(com.getNombre());
+        ImageView imv = v.findViewById(R.id.imageView);
+        imv.setImageResource(com.getImagen());
 
         // Devolvemos la vista inflada
         return v;
