@@ -34,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         nombres.add("Castilla-La Mancha");
         nombres.add("Extremadura");
 
+        /*
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombres);
         listView.setAdapter(adapter);
+        */
+
+        //Implemetanos nuestro adaptador personalizado
+        MiAdaptador miadaptador = new MiAdaptador(this, R.layout.list_items, nombres);
+        listView.setAdapter(miadaptador);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
