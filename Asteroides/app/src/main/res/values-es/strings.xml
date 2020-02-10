@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asteroides</string>
+    <string name="AcercaDe_name">Acerca de</string>
+    <string name="AcercaDe_texto1">Este juego está inspirado en Asteroids, un popular videojuego</string>
+    <string name="AcercaDe_texto2">Fue uno de los juegos más populares de la época dorada de los</string>
+    <string name="AcercaDe_texto3">El objetivo del juego es disparar y destruir asteroides evitando</string>
+    <string name="Arrancar">" Jugar"</string>
+    <string name="Acercade">Acerca de</string>
+    <string name="Configurar">Configurar</string>
+    <string name="Preferencias_name">Configuración</string>
+    <string name="Puntuaciones">Puntuaciones</string>
+    <string name="Salir">Salir</string>
+</resources>
