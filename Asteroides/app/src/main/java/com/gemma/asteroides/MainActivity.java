@@ -75,4 +75,9 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void puntuacions(View view) {
+        Intent i = new Intent(this, Puntuacion.class);
+        startActivity(i);
+    }
+
 }

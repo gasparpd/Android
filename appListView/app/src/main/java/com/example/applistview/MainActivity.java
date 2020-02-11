@@ -32,12 +32,10 @@ public class MainActivity extends AppCompatActivity {
         comunidad.add("Cataluña");
         comunidad.add("La Rioja");
         comunidad.add("Castilla-La Mancha");
-        comunidad.add("Extremadura");
-        */
-        /*
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comunidad);
-        listView.setAdapter(adapter);
-        */
+        comunidad.add("Extremadura");*/
+
+        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comunidad);
+        listView.setAdapter(adapter);*/
 
         //Implemetanos nuestro adaptador personalizado
         MiAdaptador miadaptador = new MiAdaptador(this, R.layout.list_items, comunidad);
