@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">AppAprendiendoIdiomas</string>
+    <string name="btn_aprender_numeros">Aprender números</string>
+    <string name="btn_aprender_colores">Aprender colores</string>
+    <string name="tv_aprendiendo_in">¡Aprendiendo Inglés!</string>
+    <string name="tv_colores_ingl">Colores en inglés</string>
+    <string name="tv_num_ingl">Números en inglés</string>
+    <string name="rb_amarillo">Amarillo</string>
+    <string name="rb_rojo">Rojo</string>
+    <string name="rb_azul">Azul</string>
+    <string name="rb_verde">Verde</string>
+    <string name="rb_negro">Negro</string>
+    <string name="btn_practica_colores">¡Practica!</string>
+    <string name="img_aprender_color">Aprender color</string>
+    <string name="btn_pract_colores_aceptar">ACEPTAR</string>
+    <string name="btn_pract_cambiar_color">CAMBIAR COLOR</string>
+    <string name="et_pract_color">Color en inglés</string>
+    <string name="tv_practC_introduce">Introduce el color en inglés</string>
+    <string name="tv_practC_color_name">COLOR NAME</string>
+    <string name="btn_num_0al9">0 - 9</string>
+    <string name="btn_num_10al19">10 - 19</string>
+    <string name="btn_num_20al100">20 - 100</string>
+    <string name="btn_prac_num">¡PRACTICA!</string>
+    <string name="tv_numbers">NUMBERS</string>
+    <string name="txt_pract_num">Número en inglés</string>
+    <string name="btn_pract_num_generar_n">GENERAR NÚMERO</string>
+    <string name="tv_rango_numeros">Elige el rango de números</string>
+    <string name="main_tv_desc">En esta app podrás aprender y practicar con los números y los colores en inglés.\nEmpieza pulsando los botones del fondo.</string>
+</resources>
