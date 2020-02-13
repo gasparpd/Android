@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ActivityPracticaColores">
+
+    <TextView
+        android:id="@+id/tv_colores_practica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="123dp"
+        android:gravity="center"
+        android:text="@string/tv_practC_color_name"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_practC_cambiar_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="56dp"
+        android:onClick="generarColor"
+        android:text="@string/btn_pract_cambiar_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_practC_aceptar" />
+
+    <EditText
+        android:id="@+id/txt_practicaC_color_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:hint="@string/et_pract_color"
+        android:inputType="textPersonName"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_colores_practica" />
+
+    <Button
+        android:id="@+id/btn_practC_aceptar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="116dp"
+        android:onClick="aceptar"
+        android:text="@string/btn_pract_colores_aceptar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_colores_practica" />
+
+    <TextView
+        android:id="@+id/tv_practC_enun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="124dp"
+        android:text="@string/tv_practC_introduce"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7E000000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_button_icon" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

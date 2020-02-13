@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ActivityPractNumeros">
+
+    <EditText
+        android:id="@+id/txt_practicaN_number_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:hint="@string/txt_pract_num"
+        android:textColor="@color/text_color"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/btn_prac_num_0"
+        app:layout_constraintTop_toBottomOf="@+id/tv_practN_num" />
+
+    <Button
+        android:id="@+id/btn_practN_aceptar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="27dp"
+        android:onClick="aceptar"
+        android:text="@string/btn_pract_colores_aceptar"
+        app:layout_constraintStart_toEndOf="@+id/btn_prac_num_10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_practicaN_number_name" />
+
+    <Button
+        android:id="@+id/btn_prac_num_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="68dp"
+        android:onClick="charge0"
+        android:text="@string/btn_num_0al9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_practN_num" />
+
+    <Button
+        android:id="@+id/btn_prac_num_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="charge10"
+        android:text="@string/btn_num_10al19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_prac_num_0" />
+
+    <Button
+        android:id="@+id/btn_prac_num_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="charge20"
+        android:text="@string/btn_num_20al100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_prac_num_10" />
+
+    <TextView
+        android:id="@+id/tv_practN_num"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:text="@string/tv_numbers"
+        android:textSize="30sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_practN_title" />
+
+    <TextView
+        android:id="@+id/tv_practN_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/tv_num_ingl"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_pracN_generarNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="188dp"
+        android:onClick="generaNum"
+        android:text="@string/btn_pract_num_generar_n"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_elige_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/tv_rango_numeros"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toTopOf="@+id/btn_prac_num_0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7E000000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_home_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_button_icon" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

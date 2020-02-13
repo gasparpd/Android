@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ActivityNumeros">
+
+    <TextView
+        android:id="@+id/tv_colores_aprend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/tv_num_ingl"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_elige_numero2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/tv_rango_numeros"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toTopOf="@+id/btn_apr_num_0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_apr_num_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="76dp"
+        android:onClick="charge0"
+        android:text="@string/btn_num_0al9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apr_num" />
+
+    <Button
+        android:id="@+id/btn_apr_num_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="charge20"
+        android:text="@string/btn_num_20al100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_apr_num_10" />
+
+    <Button
+        android:id="@+id/btn_apr_num_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:onClick="charge10"
+        android:text="@string/btn_num_10al19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_apr_num_0" />
+
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apr_num">
+
+        <Spinner
+            android:id="@+id/spinner_apr_num"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_apr_num"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:text="@string/tv_numbers"
+        android:textSize="30sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_colores_aprend" />
+
+    <Button
+        android:id="@+id/btn_pract_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="btnPract"
+        android:text="@string/btn_prac_num"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
