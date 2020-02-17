@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         MiHilo hilo = new MiHilo();
         hilo.start();
+
     }
 
     class MiHilo extends Thread {
@@ -42,18 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void run() {
+            for (cont = 0; cont < 5; cont++) {
+                SystemClock.sleep(1000);
 
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    for (cont = 0 ; cont < 5; cont++) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
                         salida.append(Integer.toString(random));
-                        SystemClock.sleep(500);
-                        random = (int) Math.floor(Math.random() * 10);
+                        if (cont == 4)
+                            btn_calcular.setEnabled(true);
                     }
-                    btn_calcular.setEnabled(true);
-                }
-            });
+                });
+
+                random = (int) Math.floor(Math.random() * 10);
+            }
         }
     }
 }
