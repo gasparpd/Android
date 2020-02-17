@@ -26,14 +26,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularOperacion(View view) {
-        if (cont < 5) {
-            MiHilo hilo = new MiHilo();
-            hilo.start();
-            cont++;
-        }
-        else {
-            btn_calcular.setEnabled(false);
-        }
+        salida.setText("");
+        btn_calcular.setEnabled(false);
+
+        MiHilo hilo = new MiHilo();
+        hilo.start();
     }
 
     class MiHilo extends Thread {
@@ -41,16 +38,20 @@ public class MainActivity extends AppCompatActivity {
 
         public MiHilo() {
             this.random = (int) Math.floor(Math.random() * 10);
-            ;
         }
 
         @Override
         public void run() {
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    SystemClock.sleep(1000);
-                    salida.append(Integer.toString(random));
+                    for (cont = 0 ; cont < 5; cont++) {
+                        salida.append(Integer.toString(random));
+                        SystemClock.sleep(500);
+                        random = (int) Math.floor(Math.random() * 10);
+                    }
+                    btn_calcular.setEnabled(true);
                 }
             });
         }
