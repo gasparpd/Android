@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class MiTarea extends AsyncTask<Integer, Integer, Long> {
+        private int n;
+        private long resultado;
 
         @Override
         protected Long doInBackground(Integer... n) {
