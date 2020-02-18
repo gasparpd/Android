@@ -2,6 +2,7 @@ package com.example.proyectohilo2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -32,26 +33,48 @@ public class MainActivity extends AppCompatActivity {
         salida.append(resultado + "\n");
     }
 
-    public long factorial(int n) {
+    /*public long factorial(int n) {
         long resultado = 1;
         for (int i = 1; i <= n; i++) {
             resultado *= i;
         }
         return resultado;
-    }
+    }*/
 
     class MiTarea extends AsyncTask<Integer, Integer, Long> {
-        private int n;
-        private long resultado;
+        private ProgressDialog progreso;
+
+        @Override
+        protected void onPreExecute() {
+            progreso = new ProgressDialog(MainActivity.this);
+            progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
+            progreso.setMessage("Calculando");
+            progreso.setCancelable(false);
+            progreso.setMax(100);
+            progreso.setProgress(0);
+            progreso.show();
+        }
 
         @Override
         protected Long doInBackground(Integer... n) {
-            return factorial(n[0]);
+            long resultado = 1;
+            for (int i = 1; i <= n[0]; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... porc) {
+            progreso.setProgress(porc[0]);
         }
 
         @Override
         protected void onPostExecute(Long resul) {
-            salida.append(resultado + "\n");
+            // Cerramos la ventana de progreso
+            progreso.dismiss();
+            salida.append(resul + "\n");
         }
 
     }
