@@ -18,12 +18,12 @@
 
     <EditText
         android:id="@+id/entrada"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="none|number|numberDecimal" />
 
     <Button
         android:id="@+id/btn_calculo"

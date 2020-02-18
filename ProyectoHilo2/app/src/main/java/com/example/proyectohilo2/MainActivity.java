@@ -25,17 +25,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularOperacion(View view) {
-        int n = Integer.parseInt(entrada.getText().toString());
+        int n =
+                Integer.parseInt(entrada.getText().toString());
         salida.append(n + "! = ");
-        btn_calcular.setEnabled(false);
-
-        MiTarea tarea = new MiTarea();
-        tarea.execute(n);
+        long resultado = factorial(n);
+        salida.append(resultado + "\n");
     }
 
     public long factorial(int n) {
-        long resultado=1;
-        for (int i=1; i<=n; i++){
+        long resultado = 1;
+        for (int i = 1; i <= n; i++) {
             resultado *= i;
         }
         return resultado;
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         protected Long doInBackground(Integer... n) {
             return factorial(n[0]);
         }
+
         @Override
         protected void onPostExecute(Long resul) {
             salida.append(resultado + "\n");
