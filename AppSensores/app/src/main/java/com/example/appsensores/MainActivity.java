@@ -17,15 +17,16 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        salida = (TextView) findViewById(R.id.salida);
+        salida = findViewById(R.id.salida);
         SensorManager sensorManager = (SensorManager)
                 getSystemService(SENSOR_SERVICE);
         List<Sensor> listaSensores = sensorManager.
                 getSensorList(Sensor.TYPE_ALL);
-        for(Sensor sensor: listaSensores) {
+        for (Sensor sensor : listaSensores) {
             log(sensor.getName());
         }
     }
+
     private void log(String string) {
         salida.append(string + "\n");
     }
