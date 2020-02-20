@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             pincel.setStrokeWidth(8);
             pincel.setStyle(Paint.Style.STROKE);
             canvas.drawCircle(width/2, height/2, 100, pincel);
+            canvas.drawPoint(50, 50, pincel);
+            canvas.drawLine(70, 80, 170, 180, pincel);
         }
     }
 }
