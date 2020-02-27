@@ -15,12 +15,25 @@ public class VistaJuego extends View {
     private List<Grafico> asteroides; // Lista con los Asteroides
     private int numAsteroides = 5; // Número inicial de asteroides
     private int numFragmentos = 3; // Fragmentos en que se divide
+    // //// NAVE //////
+    private Grafico nave;// Gráfico de la nave
+    private int giroNave; // Incremento de dirección
+    private float aceleracionNave; // aumento de velocidad
+    private static final int MAX_VELOCIDAD_NAVE=20;
+    // Incremento estándar de giro y aceleración
+    private static final int PASO_GIRO_NAVE = 5;
+    private static final float PASO_ACELERACION_NAVE = 0.5f;
 
     public VistaJuego(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         Drawable drawableNave, drawableAsteroide, drawableMisil;
+
         drawableAsteroide = context.getResources().getDrawable(R.drawable.asteroide1);
         asteroides = new ArrayList<>();
+
+        drawableNave = context.getResources().getDrawable(R.drawable.nave);
+        nave = new Grafico(this, drawableNave);
+
         for (int i = 0; i < numAsteroides; i++) {
             Grafico asteroide = new Grafico(this, drawableAsteroide);
             asteroide.setIncX(Math.random() * 4 - 2);
@@ -39,6 +52,8 @@ public class VistaJuego extends View {
         for (Grafico asteroide : asteroides) {
             asteroide.setCenX((int) (Math.random() * ancho));
             asteroide.setCenY((int) (Math.random() * alto));
+            nave.setCenX((int) (Math.random()*ancho));
+            nave.setCenY((int) (Math.random()*alto));
         }
     }
 
@@ -47,6 +62,7 @@ public class VistaJuego extends View {
         super.onDraw(canvas);
         for (Grafico asteroide : asteroides) {
             asteroide.dibujaGrafico(canvas);
+            nave.dibujaGrafico(canvas);
         }
     }
 }
