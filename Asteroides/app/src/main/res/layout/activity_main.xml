@@ -21,6 +21,7 @@
         android:id="@+id/btnJugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="lanzarJuego"
         android:text="@string/Arrancar" />
 
     <Button

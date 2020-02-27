@@ -80,4 +80,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void lanzarJuego(View view) {
+        Intent intent = new Intent(this, Juego.class);
+        startActivity(intent);
+    }
 }
