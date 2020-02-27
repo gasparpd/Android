@@ -18,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Referenciamos botones por su identificador
 
-        jugar = (Button) findViewById(R.id.btnJugar);
-        configuracion = (Button) findViewById(R.id.btnConfiguracion);
-        puntuaciones = (Button) findViewById(R.id.btnPuntuaciones);
-        acercaDe = (Button) findViewById(R.id.btnAcercaDe);
-        salir = (Button) findViewById(R.id.btnSalir);
+        jugar = findViewById(R.id.btnJugar);
+        configuracion = findViewById(R.id.btnConfiguracion);
+        puntuaciones = findViewById(R.id.btnPuntuaciones);
+        acercaDe = findViewById(R.id.btnAcercaDe);
+        salir = findViewById(R.id.btnSalir);
     }
 
     // Creamos Opciones de menú en la barra de acciones
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true; /** true -> el menú ya está visible */
+        return true; /* true -> el menú ya está visible */
     }
 
     @Override
