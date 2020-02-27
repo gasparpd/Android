@@ -50,8 +50,10 @@ public class VistaJuego extends View {
         super.onSizeChanged(ancho, alto, ancho_anter, alto_anter);
         // Una vez que conocemos nuestro ancho y alto
         for (Grafico asteroide : asteroides) {
-            asteroide.setCenX((int) (Math.random() * ancho));
-            asteroide.setCenY((int) (Math.random() * alto));
+            do{
+                asteroide.setCenX((int) (Math.random()*ancho));
+                asteroide.setCenY((int) (Math.random()*alto));
+            } while(asteroide.distancia(nave) < (ancho+alto)/5);
             nave.setCenX((int) (Math.random()*ancho));
             nave.setCenY((int) (Math.random()*alto));
         }
