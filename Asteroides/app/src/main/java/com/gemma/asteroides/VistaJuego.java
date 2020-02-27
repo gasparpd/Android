@@ -13,13 +13,13 @@ import java.util.List;
 public class VistaJuego extends View {
     /*ASTEROIDES*/
     private List<Grafico> asteroides; // Lista con los Asteroides
-    private int numAsteroides = 5; // Número inicial de asteroides
+    private int numAsteroides = 50; // Número inicial de asteroides
     private int numFragmentos = 3; // Fragmentos en que se divide
     // //// NAVE //////
     private Grafico nave;// Gráfico de la nave
     private int giroNave; // Incremento de dirección
     private float aceleracionNave; // aumento de velocidad
-    private static final int MAX_VELOCIDAD_NAVE=20;
+    private static final int MAX_VELOCIDAD_NAVE = 20;
     // Incremento estándar de giro y aceleración
     private static final int PASO_GIRO_NAVE = 5;
     private static final float PASO_ACELERACION_NAVE = 0.5f;
@@ -48,14 +48,18 @@ public class VistaJuego extends View {
     protected void onSizeChanged(int ancho, int alto, int
             ancho_anter, int alto_anter) {
         super.onSizeChanged(ancho, alto, ancho_anter, alto_anter);
-        // Una vez que conocemos nuestro ancho y alto
+
+        /*Posicionamos la nave*/
+        nave.setCenX((int) (Math.random() * ancho));
+        nave.setCenY((int) (Math.random() * alto));
+
+        /*Una vez que conocemos nuestro ancho y alto
+        posicionamos los asteroides*/
         for (Grafico asteroide : asteroides) {
-            do{
-                asteroide.setCenX((int) (Math.random()*ancho));
-                asteroide.setCenY((int) (Math.random()*alto));
-            } while(asteroide.distancia(nave) < (ancho+alto)/5);
-            nave.setCenX((int) (Math.random()*ancho));
-            nave.setCenY((int) (Math.random()*alto));
+            do {
+                asteroide.setCenX((int) (Math.random() * ancho));
+                asteroide.setCenY((int) (Math.random() * alto));
+            } while (asteroide.distancia(nave) < (ancho + alto) / 5);
         }
     }
 
