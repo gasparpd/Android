@@ -56,13 +56,15 @@
                         android:id="@+id/buttonConfiguracion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Configurar" />
+                        android:text="@string/Configurar"
+                        android:onClick="configurar"/>
 
                     <Button
                         android:id="@+id/buttonAcercaDe"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Acercade" />
+                        android:text="@string/Acercade"
+                        android:onClick="acercaDe"/>
 
                 </TableRow>
 
@@ -74,13 +76,15 @@
                         android:id="@+id/buttonPuntuaciones"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Puntuaciones" />
+                        android:text="@string/Puntuaciones"
+                        android:onClick="puntuacions"/>
 
                     <Button
                         android:id="@+id/buttonSalir"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Salir" />
+                        android:text="@string/Salir"
+                        android:onClick="salir"/>
                 </TableRow>
 
             </TableLayout>
