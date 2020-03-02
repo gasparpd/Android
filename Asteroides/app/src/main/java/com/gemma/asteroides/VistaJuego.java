@@ -76,7 +76,7 @@ public class VistaJuego extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    synchronized protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         for (Grafico asteroide : asteroides) {
             asteroide.dibujaGrafico(canvas);
@@ -84,7 +84,7 @@ public class VistaJuego extends View {
         }
     }
 
-    protected void actualizaFisica() {
+    synchronized protected void actualizaFisica() {
         long ahora = System.currentTimeMillis();
         if (ultimoProceso + PERIODO_PROCESO > ahora) {
             return; // Salir si el periodo de proceso no se ha cumplido
