@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -161,6 +162,41 @@ public class VistaJuego extends View {
                 break;
         }
         return procesada;
+    }
+
+    // Para manejar la nave de forma táctil
+    private float mX=0, mY=0;
+    private boolean disparo=false;
+    @Override
+    public boolean onTouchEvent (MotionEvent event) {
+        super.onTouchEvent(event);
+        float x = event.getX();
+        float y = event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                disparo=true;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                float dx = Math.abs(x - mX);
+                float dy = Math.abs(y - mY);
+                if (dy<6 && dx>6){
+                    giroNave = Math.round((x - mX) / 2);
+                    disparo = false;
+                } else if (dx<6 && dy>6){
+                    aceleracionNave = Math.round((mY - y) / 25);
+                    disparo = false;
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                giroNave = 0;
+                aceleracionNave = 0;
+                if (disparo){
+                    //ActivaMisil();
+                }
+                break;
+        }
+        mX=x; mY=y;
+        return true;
     }
 
     class ThreadJuego extends Thread {
