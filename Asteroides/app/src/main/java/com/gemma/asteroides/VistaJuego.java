@@ -13,7 +13,7 @@ import java.util.List;
 public class VistaJuego extends View {
     /*ASTEROIDES*/
     private List<Grafico> asteroides; // Lista con los Asteroides
-    private int numAsteroides = 50; // Número inicial de asteroides
+    private int numAsteroides = 10; // Número inicial de asteroides
     private int numFragmentos = 3; // Fragmentos en que se divide
 
     // //// NAVE //////
