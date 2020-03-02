@@ -3,6 +3,10 @@ package com.gemma.asteroides;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -12,7 +16,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VistaJuego extends View {
+public class VistaJuego extends View implements SensorEventListener {
     /*ASTEROIDES*/
     private List<Grafico> asteroides; // Lista con los Asteroides
     private int numAsteroides = 10; // Número inicial de asteroides
@@ -52,6 +56,17 @@ public class VistaJuego extends View {
             asteroide.setAngulo((int) (Math.random() * 360));
             asteroide.setRotacion((int) (Math.random() * 8 - 4));
             asteroides.add(asteroide);
+        }
+
+        // Sensores
+        SensorManager mSensorManager = (SensorManager)
+                context.getSystemService(Context.SENSOR_SERVICE);
+        List<Sensor> listSensors = mSensorManager.getSensorList(
+                Sensor.TYPE_ORIENTATION);
+        if (!listSensors.isEmpty()) {
+            Sensor orientationSensor = listSensors.get(0);
+            mSensorManager.registerListener(this,
+                    orientationSensor, SensorManager.SENSOR_DELAY_GAME);
         }
     }
 
@@ -165,24 +180,25 @@ public class VistaJuego extends View {
     }
 
     // Para manejar la nave de forma táctil
-    private float mX=0, mY=0;
-    private boolean disparo=false;
+    private float mX = 0, mY = 0;
+    private boolean disparo = false;
+
     @Override
-    public boolean onTouchEvent (MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
         float x = event.getX();
         float y = event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                disparo=true;
+                disparo = true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 float dx = Math.abs(x - mX);
                 float dy = Math.abs(y - mY);
-                if (dy<6 && dx>6){
+                if (dy < 6 && dx > 6) {
                     giroNave = Math.round((x - mX) / 2);
                     disparo = false;
-                } else if (dx<6 && dy>6){
+                } else if (dx < 6 && dy > 6) {
                     aceleracionNave = Math.round((mY - y) / 25);
                     disparo = false;
                 }
@@ -190,13 +206,31 @@ public class VistaJuego extends View {
             case MotionEvent.ACTION_UP:
                 giroNave = 0;
                 aceleracionNave = 0;
-                if (disparo){
+                if (disparo) {
                     //ActivaMisil();
                 }
                 break;
         }
-        mX=x; mY=y;
+        mX = x;
+        mY = y;
         return true;
+    }
+
+    private boolean hayValorInicial = false;
+    private float valorInicial;
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        float valor = sensorEvent.values[1];
+        if (!hayValorInicial){
+            valorInicial = valor;
+            hayValorInicial = true;
+        }
+        giroNave=(int) (valor-valorInicial)/3 ;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
     }
 
     class ThreadJuego extends Thread {
