@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -109,6 +110,57 @@ public class VistaJuego extends View {
         for (Grafico asteroide : asteroides) {
             asteroide.incrementaPos(factorMov);
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int codigoTecla, KeyEvent evento) {
+        super.onKeyDown(codigoTecla, evento);
+        // Suponemos que vamos a procesar la pulsación
+        boolean procesada = true;
+        switch (codigoTecla) {
+            case KeyEvent.KEYCODE_DPAD_UP:
+                // Pulsación flecha arriba: acelera la nave
+                aceleracionNave = +PASO_ACELERACION_NAVE;
+                break;
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+                // Pulsación flecha izquierda: gira la nave
+                giroNave = -PASO_GIRO_NAVE;
+                break;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                // Pulsación flecha derecha: gira la nave
+                giroNave = +PASO_GIRO_NAVE;
+                break;
+            case KeyEvent.KEYCODE_DPAD_CENTER:
+            case KeyEvent.KEYCODE_ENTER:
+                /*ActivaMisil();*/
+                break;
+            default:
+                // Si estamos aquí, no hay pulsación que nos interese
+                procesada = false;
+                break;
+        }
+        return procesada;
+    }
+
+    @Override
+    public boolean onKeyUp(int codigoTecla, KeyEvent evento) {
+        super.onKeyUp(codigoTecla, evento);
+        // Suponemos que vamos a procesar la pulsación
+        boolean procesada = true;
+        switch (codigoTecla) {
+            case KeyEvent.KEYCODE_DPAD_UP:
+                aceleracionNave = 0;
+                break;
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                giroNave = 0;
+                break;
+            default:
+                // Si estamos aquí, no hay pulsación que nos interese
+                procesada = false;
+                break;
+        }
+        return procesada;
     }
 
     class ThreadJuego extends Thread {
