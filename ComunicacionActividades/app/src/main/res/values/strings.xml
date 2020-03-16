@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ComunicacionActividades</string>
+    <string name="label_nombre">Nombre</string>
+    <string name="btn_verif">Verificar</string>
+    <string name="tv_resultado">Resultado</string>
+    <string name="et_nombre">Escribe tu nombre</string>
+    <string name="btn_aceptar">Aceptar</string>
+    <string name="btn_rechazar">Rechazar</string>
 </resources>
