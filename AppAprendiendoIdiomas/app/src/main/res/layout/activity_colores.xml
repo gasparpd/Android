@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginTop="72dp"
-        android:onClick="practicar"
+        android:onClick="practicarColores"
         android:text="@string/btn_practica_colores"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_colores" />
