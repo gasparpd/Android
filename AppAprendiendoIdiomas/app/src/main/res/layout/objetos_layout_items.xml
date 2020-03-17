@@ -6,17 +6,17 @@
 
     <ImageView
         android:id="@+id/apr_objetos_image"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_weight="1"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/apr_objetos_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:gravity="center|center_vertical"
+        android:gravity="center_vertical"
         android:text="TextView"
         android:textSize="30sp" />
 </LinearLayout>
