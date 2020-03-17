@@ -27,7 +27,7 @@ public class PracticaObjetos extends MainActivity {
         btn_cambiarObjeto = findViewById(R.id.pract_objetos_btn_cambiar);
         txt_name = findViewById(R.id.pract_objetos_object_name);
 
-        objetos = new ArrayList<ObjetoCotidiano>();
+        objetos = new ArrayList<>();
         objetos.add(new ObjetoCotidiano("BALÓN", R.drawable.balon, "BALL"));
         objetos.add(new ObjetoCotidiano("CEPILLO DEL PELO", R.drawable.cepillo_pelo, "HAIR BRUSH"));
         objetos.add(new ObjetoCotidiano("BOLÍGRAFO", R.drawable.boli, "PEN"));
