@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ObjetosCotidianosAprender"></activity>
+        <activity android:name=".PracticaObjetos"></activity>
+        <activity android:name=".ObjetosCotidianosAprender" />
         <activity android:name=".ActivityPractNumeros" />
         <activity android:name=".ActivityPracticaColores" />
         <activity android:name=".ActivityNumeros" />
