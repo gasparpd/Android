@@ -33,8 +33,8 @@ public class AdaptadorObjetoCotidiano extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public long getItemId(int id) {
+        return id;
     }
 
     @Override
@@ -45,13 +45,13 @@ public class AdaptadorObjetoCotidiano extends BaseAdapter {
         // Inflamos la vista con nuestro propio layout
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
 
-        v = layoutInflater.inflate(R.layout.activity_objetos_cotidianos_listview, null);
+        v = layoutInflater.inflate(R.layout.objetos_layout_items, null);
         // Valor actual según la posición
         //String currentName = comunidades.get(position);
         ObjetoCotidiano objeto = objetoscotidianos.get(position);
 
         // Referenciamos el elemento a modificar y lo rellenamos
-        TextView tv = v.findViewById(R.id.textView);
+        TextView tv = v.findViewById(R.id.apr_objetos_tv);
         tv.setText(objeto.getNombre());
         ImageView imv = v.findViewById(R.id.apr_objetos_image);
         imv.setImageResource(objeto.getImagen());
