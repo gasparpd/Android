@@ -4,10 +4,12 @@ public class ObjetoCotidiano {
 
     private String nombre;
     private int imagen;
+    private String name;
 
-    public ObjetoCotidiano(String nombre, int imagen) {
+    public ObjetoCotidiano(String nombre, int imagen, String name) {
         this.nombre = nombre;
         this.imagen = imagen;
+        this.name = name;
     }
 
     public ObjetoCotidiano() {
@@ -27,5 +29,13 @@ public class ObjetoCotidiano {
 
     public void setImagen(int imagen) {
         this.imagen = imagen;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
