@@ -26,4 +26,5 @@
     <string name="btn_pract_num_generar_n">GENERAR NÚMERO</string>
     <string name="tv_rango_numeros">Elige el rango de números</string>
     <string name="main_tv_desc">En esta app podrás aprender y practicar con los números y los colores en inglés.\nEmpieza pulsando los botones del fondo.</string>
+    <string name="main_btn_objetos">OBJETOS</string>
 </resources>
