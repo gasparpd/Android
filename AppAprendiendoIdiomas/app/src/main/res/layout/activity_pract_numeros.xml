@@ -15,6 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:text="@string/tv_num_ingl"
+        android:textAlignment="center"
         android:textColor="@color/text_color"
         android:textSize="28dp"
         android:textStyle="bold" />
