@@ -11,9 +11,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class PracticaObjetos extends MainActivity {
+    private String name;
     private int posicion = 0;
     private ArrayList<ObjetoCotidiano> objetos;
-    private ImageView imagenObjeto;
+    private ImageView imagenObjeto, img2;
     private Button btn_validar, btn_cambiarObjeto;
     private EditText txt_name;
 
@@ -22,6 +23,7 @@ public class PracticaObjetos extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practica_objetos);
 
+        img2 = findViewById(R.id.pract_objetos_imgv);
         imagenObjeto = findViewById(R.id.apr_objetos_image);
         btn_validar = findViewById(R.id.pract_objetos_btn_validar);
         btn_cambiarObjeto = findViewById(R.id.pract_objetos_btn_cambiar);
@@ -38,6 +40,9 @@ public class PracticaObjetos extends MainActivity {
         objetos.add(new ObjetoCotidiano("LLAVES", R.drawable.llaves, "KEYS"));
         objetos.add(new ObjetoCotidiano("RELOJ", R.drawable.reloj, "WATCH"));
         objetos.add(new ObjetoCotidiano("TIJERAS", R.drawable.tijeras, "SCISSORS"));
+
+        btn_validar.setEnabled(false);
+        txt_name.setEnabled(false);
     }
 
     public void cambiarObjeto(View view) {
@@ -45,13 +50,17 @@ public class PracticaObjetos extends MainActivity {
             posicion = 0;
         }
 
-        imagenObjeto.setImageResource(objetos.get(posicion).getImagen());
+        img2.setImageResource(objetos.get(posicion).getImagen());
+        name = objetos.get(posicion).getName();
+        btn_validar.setEnabled(true);
+        txt_name.setEnabled(true);
+        posicion++;
     }
 
     public void validarObjeto(View view) {
         String inputName = txt_name.getText().toString();
 
-        if (inputName.equalsIgnoreCase(objetos.get(posicion).getName())) {
+        if (inputName.equalsIgnoreCase(name)) {
             txt_name.setBackgroundColor(Color.GREEN);
             Toast.makeText(this, "¡HAS ACERTADO!", Toast.LENGTH_SHORT).show();
         } else {
