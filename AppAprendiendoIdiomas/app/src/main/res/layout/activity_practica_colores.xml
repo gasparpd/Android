@@ -66,7 +66,7 @@
         android:layout_marginTop="124dp"
         android:text="@string/tv_practC_introduce"
         android:textColor="@color/text_color"
-        android:textSize="18sp"
+        android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
