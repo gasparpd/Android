@@ -97,7 +97,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:clickable="true"
-            android:onClick="btnPract"
+            android:onClick="practicaNumeros"
             android:src="@drawable/icono_flotante_lapiz"
             app:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"

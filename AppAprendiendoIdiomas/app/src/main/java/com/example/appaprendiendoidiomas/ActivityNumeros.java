@@ -48,7 +48,7 @@ public class ActivityNumeros extends MainActivity {
         spinner.setEnabled(false);
     }
 
-    public void btnPract(View view){
+    public void practicaNumeros(View view) {
         Intent i = new Intent(this, ActivityPractNumeros.class);
         startActivity(i);
     }
