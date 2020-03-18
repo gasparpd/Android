@@ -30,4 +30,5 @@
     <string name="pract_objetos_btn_validar">Validar</string>
     <string name="pract_objetos_txthint_name">Name</string>
     <string name="pract_objetos_btn_cambiar_objeto">Cambiar Objeto</string>
+    <string name="apr_num_tvtittle">Números en inglés</string>
 </resources>
