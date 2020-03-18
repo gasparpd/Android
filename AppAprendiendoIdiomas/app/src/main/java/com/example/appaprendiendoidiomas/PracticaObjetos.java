@@ -67,6 +67,7 @@ public class PracticaObjetos extends MainActivity {
         name = objetos.get(posicion).getName();
         btn_validar.setEnabled(true);
         txt_name.setEnabled(true);
+        txt_name.setBackgroundColor(Color.TRANSPARENT);
         posicion++;
     }
 
@@ -74,9 +75,11 @@ public class PracticaObjetos extends MainActivity {
         String inputName = txt_name.getText().toString();
 
         if (inputName.equalsIgnoreCase(name)) {
+            txt_name.setTextColor(Color.BLACK);
             txt_name.setBackgroundColor(Color.GREEN);
             Toast.makeText(this, "¡HAS ACERTADO!", Toast.LENGTH_SHORT).show();
         } else {
+            txt_name.setTextColor(Color.WHITE);
             txt_name.setBackgroundColor(Color.RED);
             Toast.makeText(this, "HAS FALLADO", Toast.LENGTH_SHORT).show();
         }
