@@ -8,12 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class ActivityPractNumeros extends MainActivity {
     String [] array_num;
     int pos = 0, array_charged= -1;
     TextView tv_num, tv_title;
     EditText et_number;
-    Button btn_aceptar, btn_generar, btn_0, btn_10, btn_20, btn_home;
+    Button btn_aceptar, btn_generar, btn_0, btn_10, btn_20;
+    private FloatingActionButton btn_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class ActivityPractNumeros extends MainActivity {
         tv_num = findViewById(R.id.tv_practN_num);
         tv_title = findViewById(R.id.tv_practN_title);
         et_number = findViewById(R.id.txt_practicaN_number_name);
-        btn_home = findViewById(R.id.btn_home_2);
+        btn_home = findViewById(R.id.pract_numeros_button_home);
 
         btn_aceptar.setEnabled(false);
         btn_generar.setEnabled(false);

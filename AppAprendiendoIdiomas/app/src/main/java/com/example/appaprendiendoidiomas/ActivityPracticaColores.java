@@ -8,11 +8,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class ActivityPracticaColores extends MainActivity {
-    int pos = 0; String name; Colores [] colores;
+    int pos = 0;
+    String name;
+    Colores[] colores;
     TextView tv_colores;
     EditText et_color;
-    Button btn_aceptar, btn_generar,  btn_home;
+    Button btn_aceptar, btn_generar;
+    private FloatingActionButton btn_home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,7 @@ public class ActivityPracticaColores extends MainActivity {
         et_color = findViewById(R.id.txt_practicaC_color_name);
         btn_aceptar = findViewById(R.id.btn_practC_aceptar);
         btn_generar = findViewById(R.id.btn_practC_cambiar_color);
-        btn_home = findViewById(R.id.btn_home);
+        btn_home = findViewById(R.id.pract_colores_button_home);
 
         btn_aceptar.setEnabled(false);
         et_color.setEnabled(false);
@@ -44,7 +50,7 @@ public class ActivityPracticaColores extends MainActivity {
     }
 
     public void generarColor(View view) {
-        if(pos == 5){
+        if (pos == 5) {
             pos = 0;
         }
 
@@ -53,18 +59,18 @@ public class ActivityPracticaColores extends MainActivity {
 
         pos++;
 
-        if (!btn_aceptar.isEnabled()){
+        if (!btn_aceptar.isEnabled()) {
             btn_aceptar.setEnabled(true);
         }
-        if(!et_color.isEnabled()){
+        if (!et_color.isEnabled()) {
             et_color.setEnabled(true);
         }
         et_color.setBackgroundColor(Color.TRANSPARENT);
     }
 
-    public void aceptar(View view){
+    public void aceptar(View view) {
         String nombre = et_color.getText().toString();
-        if(nombre.equalsIgnoreCase(name)){
+        if (nombre.equalsIgnoreCase(name)) {
             et_color.setBackgroundColor(Color.GREEN);
         } else {
             et_color.setBackgroundColor(Color.RED);

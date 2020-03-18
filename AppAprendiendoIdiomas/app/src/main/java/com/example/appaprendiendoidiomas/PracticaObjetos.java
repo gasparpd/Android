@@ -1,5 +1,6 @@
 package com.example.appaprendiendoidiomas;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,7 @@ public class PracticaObjetos extends MainActivity {
     private ArrayList<ObjetoCotidiano> objetos;
     private ImageView imagenObjeto, img2;
     private Button btn_validar, btn_cambiarObjeto;
+    private FloatingActionButton btn_home;
     private EditText txt_name;
 
     @Override
@@ -43,6 +47,15 @@ public class PracticaObjetos extends MainActivity {
 
         btn_validar.setEnabled(false);
         txt_name.setEnabled(false);
+
+        btn_home = findViewById(R.id.pract_objetos_button_home);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void cambiarObjeto(View view) {
