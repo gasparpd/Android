@@ -49,7 +49,7 @@ public class ObjetosCotidianosAprender extends MainActivity {
         });
     }
 
-    public void practicarColores(View view) {
+    public void practicarObjetos(View view) {
         Intent i = new Intent(this, PracticaObjetos.class);
         startActivity(i);
     }

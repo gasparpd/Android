@@ -60,7 +60,7 @@ public class ActivityColores extends MainActivity {
         tv_colores.setText("BLACK");
     }
 
-    public void practicar (View view){
+    public void practicarColores(View view) {
         Intent i = new Intent(this, ActivityPracticaColores.class);
         startActivity(i);
     }
