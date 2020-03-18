@@ -11,7 +11,8 @@
     <ImageView
         android:id="@+id/pract_objetos_imgv"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"
+        android:layout_margin="20dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -37,7 +38,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/pract_objetos_txthint_name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/text_color" />
 
         <Button
             android:id="@+id/pract_objetos_btn_validar"
