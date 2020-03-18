@@ -3,10 +3,11 @@ package com.example.appaprendiendoidiomas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.BLUE;
@@ -19,7 +20,7 @@ public class ActivityColores extends MainActivity {
     RadioButton rb_rojo, rb_azul, rb_amarillo, rb_verde, rb_negro;
     ImageView img_color;
     TextView tv_colores;
-    Button btn_practica;
+    FloatingActionButton btn_practica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class ActivityColores extends MainActivity {
 
         tv_colores = findViewById(R.id.tv_colores_aprend);
 
-        btn_practica = findViewById(R.id.btn_practica);
+        btn_practica = findViewById(R.id.apr_colores_fbtn_practica);
     }
 
     public void rbRojo (View view){

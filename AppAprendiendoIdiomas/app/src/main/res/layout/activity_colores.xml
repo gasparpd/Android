@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context=".ActivityColores">
 
     <TextView
         android:id="@+id/tv_colores_aprend"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
         android:gravity="center"
         android:text="@string/tv_colores_ingl"
         android:textColor="@color/text_color"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/img_color"
-        android:layout_width="159dp"
+        android:layout_width="158dp"
         android:layout_height="158dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="36dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
         android:adjustViewBounds="false"
         android:contentDescription="@string/img_aprender_color"
-        android:theme="@android:style/Widget.ImageWell"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_colores_aprend" />
+        android:theme="@android:style/Widget.ImageWell" />
 
     <RadioGroup
         android:id="@+id/rg_colores"
         android:layout_width="174dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_color">
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp">
 
         <RadioButton
             android:id="@+id/rb_amarillo"
@@ -49,7 +43,7 @@
             android:layout_height="wrap_content"
             android:onClick="rbAmar"
             android:text="@string/rb_amarillo"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color" />
 
         <RadioButton
             android:id="@+id/rb_rojo"
@@ -57,7 +51,7 @@
             android:layout_height="wrap_content"
             android:onClick="rbRojo"
             android:text="@string/rb_rojo"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color" />
 
         <RadioButton
             android:id="@+id/rb_azul"
@@ -65,7 +59,7 @@
             android:layout_height="wrap_content"
             android:onClick="rbAzul"
             android:text="@string/rb_azul"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color" />
 
         <RadioButton
             android:id="@+id/rb_verde"
@@ -73,7 +67,7 @@
             android:layout_height="wrap_content"
             android:onClick="rbVerde"
             android:text="@string/rb_verde"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color" />
 
         <RadioButton
             android:id="@+id/rb_negro"
@@ -81,18 +75,25 @@
             android:layout_height="wrap_content"
             android:onClick="rbNegro"
             android:text="@string/rb_negro"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btn_practica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="72dp"
-        android:onClick="practicarColores"
-        android:text="@string/btn_practica_colores"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_colores" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/apr_colores_fbtn_practica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:onClick="practicarColores"
+            android:src="@drawable/icono_flotante_lapiz"
+            app:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
