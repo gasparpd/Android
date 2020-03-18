@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class ActivityNumeros extends MainActivity {
 
-    Spinner spinner; Button btn_0, btn_10, btn_20, btn_practice;
+    Spinner spinner;
+    Button btn_0, btn_10, btn_20;
+    FloatingActionButton btn_practica;
     int array_charged;
     TextView tv_numbers;
 
@@ -24,7 +28,7 @@ public class ActivityNumeros extends MainActivity {
         btn_0 = findViewById(R.id.btn_apr_num_0);
         btn_10 = findViewById(R.id.btn_apr_num_10);
         btn_20 = findViewById(R.id.btn_apr_num_20);
-        btn_practice = findViewById(R.id.btn_pract_num);
+        btn_practica = findViewById(R.id.apr_num_btn_practica);
         tv_numbers = findViewById(R.id.tv_apr_num);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
